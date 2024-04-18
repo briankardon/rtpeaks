@@ -15,7 +15,7 @@ except ImportError:
     pass
 import multiprocessing as mp
 import os
-import Queue
+import queue
 import numpy as np
 import rtpeaks.process as rp
 
@@ -252,7 +252,7 @@ def biopac_sample(dic, sample_queue, log_queue):
             pipe = dic['pipe']
             if pipe is not None:
                 try: sample_queue.put_nowait([currtime, data[pipe]])
-                except Queue.Full: pass
+                except queue.Full: pass
 
     shutdown_biopac(mpdev)
 

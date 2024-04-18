@@ -2,3 +2,5 @@
 *egg-info
 .DS_Store
 rtpeaks/mpdev.dll
+/build/
+/dist/

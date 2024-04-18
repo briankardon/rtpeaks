@@ -1,6 +1,6 @@
 from __future__ import print_function, division, absolute_import
 import itertools
-import Queue
+import queue
 import time
 import numpy as np
 from rtpeaks.keypress import press_key
@@ -221,7 +221,7 @@ def dummy_keypress(dic, sample_queue, debug=False):
 
     while True:
         try: i = sample_queue.get_nowait()
-        except Queue.Empty: i = None
+        except queue.Empty: i = None
         if isinstance(i, str) and i == 'kill': return
 
         if dic['pipe'] is None: continue
